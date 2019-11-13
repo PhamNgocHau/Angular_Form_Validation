@@ -1,0 +1,19 @@
+h3 {
+  padding-left: 60px;
+  margin-bottom: 20px;
+  color: mediumpurple;
+}
+.form-control {
+  width: 30%;
+  margin-left: 30px;
+}
+
+label{
+  margin-left: 30px;
+}
+.form-text {
+  margin-left: 30px;
+}
+.btn {
+  margin: 25px;
+}

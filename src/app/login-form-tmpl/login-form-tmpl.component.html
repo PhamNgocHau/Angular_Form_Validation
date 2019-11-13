@@ -1,0 +1,16 @@
+<h3>Template-driven form</h3>
+<form #loginForm="ngForm" class="form-group">
+  <div>
+    <input class="form-control" name="username" type="text" ngModel placeholder="UserName">
+  </div>
+  <div>
+    <input class="form-control" name="password" type="password" ngModel placeholder="Password">
+  </div>
+  <div>
+    <button class="btn btn-primary" type="submit" (click)="onSubmit(loginForm)">Login</button>
+  </div>
+</form>
+<pre>
+  {{ loginForm.value | json }}
+</pre>
+

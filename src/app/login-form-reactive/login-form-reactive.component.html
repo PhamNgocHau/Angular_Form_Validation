@@ -1,0 +1,33 @@
+<h3>(Reactive) Model-driven Form</h3>
+<form class="form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label for="inputUsername">Username</label>
+  <input type="username" id="inputUsername"
+         class="form-control"
+         [ngClass]="username.invalid && username.dirty ? 'is-invalid' : ''"
+         aria-describedby="passwordHelpBlock"
+         formControlName="username"
+  >
+  <small id="userNameHelp" class="form-text text-muted"
+         *ngIf="username.invalid && username.dirty">
+    Your user name must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+  </small>
+
+  <label for="inputPassword">Password</label>
+  <input type="password" id="inputPassword"
+         class="form-control"
+         [ngClass]="password.invalid && password.dirty ? 'is-invalid' : ''"
+         aria-describedby="passwordHelpBlock"
+         formControlName="password"
+  >
+  <small id="PasswordHelp" class="form-text text-muted"
+         *ngIf="password.invalid && password.dirty">
+    Your user name must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+  </small>
+
+  <button class="btn btn-primary" type="submit"
+          [disabled]="loginForm.invalid"
+  >Login</button>
+</form>
+<pre>
+  {{ loginForm.value | json }}
+</pre>
